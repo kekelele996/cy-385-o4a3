@@ -18,7 +18,7 @@ docker compose up -d --build
 - 内置疫苗计划，支持已接种和未接种状态。
 - 按月龄推荐辅食食谱，并支持过敏原筛选。
 - 记录每日喂养内容、时间和宝宝反应。
-- 维护成长里程碑时间线，预留照片上传扩展。
+- 成长里程碑时间线：可选类型、实际日期、说明和照片地址；日期早于出生日或晚于今天不保存并明确提示；同一天同类型只保留最早提交的一条；改日期后时间线自动重排；首页与宝宝档案均可查看最近一次记录。
 - 统计月度喂养频次、辅食多样性和生长趋势。
 
 ## 本地开发方式
@@ -52,6 +52,7 @@ npm run dev
 │       ├── java/com/babytracker
 │       │   ├── constants
 │       │   ├── controller
+│       │   ├── dto
 │       │   ├── entity
 │       │   ├── exception
 │       │   ├── mapper
@@ -61,6 +62,8 @@ npm run dev
 ├── database
 ├── frontend
 │   └── src
+│       ├── components
+│       └── pages
 └── docker-compose.yml
 ```
 

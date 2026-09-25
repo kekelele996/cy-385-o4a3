@@ -11,5 +11,6 @@ public class BabyController {
     private final BabyService service;
     public BabyController(BabyService service) { this.service = service; }
     @GetMapping public List<Baby> list() { return service.list(); }
+    @GetMapping("/{id}") public Baby get(@PathVariable Long id) { return service.getById(id); }
     @PostMapping public Baby create(@RequestBody Baby baby) { return service.create(baby); }
 }

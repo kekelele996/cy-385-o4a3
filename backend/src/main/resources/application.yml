@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/babytracker?serverTimezone=Asia/Shanghai}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/babytracker?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false}
     username: ${SPRING_DATASOURCE_USERNAME:babytracker}
     password: ${SPRING_DATASOURCE_PASSWORD:babytracker_pass}
 mybatis-plus:

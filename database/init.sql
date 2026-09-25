@@ -34,3 +34,20 @@ CREATE TABLE IF NOT EXISTS food_recipe (
   nutrition TEXT,
   allergens VARCHAR(160)
 );
+
+CREATE TABLE IF NOT EXISTS milestone_record (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  baby_id BIGINT NOT NULL,
+  type VARCHAR(40) NOT NULL,
+  milestone_date DATE NOT NULL,
+  description VARCHAR(500),
+  photo_url VARCHAR(500),
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY uk_baby_type_date (baby_id, type, milestone_date),
+  KEY idx_baby_date (baby_id, milestone_date)
+);
+
+INSERT INTO baby (name, birthday, blood_type, initial_height, initial_weight)
+SELECT '小满', '2025-09-20', 'A', 50.00, 3.30
+WHERE NOT EXISTS (SELECT 1 FROM baby WHERE name = '小满');
