@@ -1,1 +1,317 @@
-body{margin:0;background:#fff7f2;color:#3b2b24;font-family:Inter,Arial,"Microsoft YaHei",sans-serif}main{max-width:520px;margin:0 auto;padding:16px 16px 72px}header{background:#ff8a65;color:#fff;border-radius:8px;padding:20px}.card{background:#fff;border-radius:8px;margin-top:14px;padding:14px;box-shadow:0 6px 20px rgba(128,70,45,.10)}.chart{height:260px}
+body {
+  margin: 0;
+  background: #fff7f2;
+  color: #3b2b24;
+  font-family: Inter, Arial, "Microsoft YaHei", sans-serif;
+}
+
+main {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px 16px 80px;
+}
+
+header,
+.hero {
+  background: #ff8a65;
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.hero p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  margin-top: 14px;
+  padding: 14px;
+  box-shadow: 0 6px 20px rgba(128, 70, 45, 0.1);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-foot {
+  margin: 10px 0 0;
+  text-align: right;
+  color: #ff8a65;
+  font-size: 13px;
+}
+
+/* 最近一次里程碑 */
+.latest-card {
+  cursor: pointer;
+}
+
+.latest-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.latest-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.latest-type {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.latest-date {
+  margin: 0 0 4px;
+  color: #9c7d6e;
+  font-size: 13px;
+}
+
+.latest-note {
+  margin: 0;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.thumb-fallback {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: #f3ece8;
+  color: #b39b8f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.quick-card .van-grid-item__content {
+  border-radius: 10px;
+  background: #fff5f0;
+}
+
+/* 弹层表单 */
+.popup-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.popup-body {
+  padding: 0 0 12px;
+  overflow-y: auto;
+}
+
+.popup-foot {
+  display: flex;
+  gap: 12px;
+  padding: 8px 16px calc(12px + env(safe-area-inset-bottom));
+}
+
+.form-group {
+  margin-top: 8px;
+}
+
+.field-error input {
+  color: #ee0a24 !important;
+}
+
+.photo-hint {
+  margin: 6px 32px 0;
+  font-size: 12px;
+  color: #ee0a24;
+}
+
+/* 重复记录提示 */
+.existing-card {
+  display: flex;
+  gap: 10px;
+  margin: 12px 16px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fff7e8;
+  color: #7a5310;
+  font-size: 13px;
+}
+
+.existing-title {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.existing-meta,
+.existing-note {
+  margin: 0 0 2px;
+}
+
+/* 时间线 */
+.timeline {
+  margin-top: 8px;
+}
+
+.tl-item {
+  display: flex;
+  align-items: stretch;
+}
+
+.tl-axis {
+  width: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tl-dot {
+  margin-top: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff8a65;
+  flex-shrink: 0;
+}
+
+.tl-line {
+  flex: 1;
+  width: 2px;
+  background: #ffd8c7;
+}
+
+.tl-card {
+  flex: 1;
+  margin: 0 0 14px 6px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ffe1d3;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tl-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.tl-date {
+  font-weight: 600;
+}
+
+.tl-age {
+  color: #9c7d6e;
+  font-size: 12px;
+}
+
+.tl-note {
+  margin: 8px 0 0;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.tl-photo {
+  margin-top: 8px;
+  width: 120px;
+  height: 120px;
+}
+
+.tl-photo-fallback {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3ece8;
+  color: #b39b8f;
+  font-size: 12px;
+}
+
+.tl-created {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #b39b8f;
+}
+
+/* 宝宝档案 */
+.baby-card.active {
+  border: 2px solid #ff8a65;
+  cursor: default;
+}
+
+.baby-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.baby-card-head h2 {
+  margin: 0 0 4px;
+}
+
+.baby-card-head p {
+  margin: 0;
+  color: #9c7d6e;
+  font-size: 13px;
+}
+
+.baby-meta {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #6e574d;
+}
+
+.baby-latest {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff5f0;
+  cursor: pointer;
+}
+
+.bl-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bl-meta {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #9c7d6e;
+}

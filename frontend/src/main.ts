@@ -1,7 +1,53 @@
 import { createApp } from 'vue';
-import { Button, Cell, CellGroup, Tag } from 'vant';
+import {
+  ActionSheet,
+  Button,
+  Cell,
+  CellGroup,
+  DropdownItem,
+  DropdownMenu,
+  Empty,
+  Field,
+  Grid,
+  GridItem,
+  Icon,
+  Image,
+  NoticeBar,
+  Popup,
+  PullRefresh,
+  Skeleton,
+  Tabbar,
+  TabbarItem,
+  Tag,
+  Picker,
+  DatePicker,
+} from 'vant';
 import 'vant/lib/index.css';
 import App from './App.vue';
 import './styles.css';
 
-createApp(App).use(Button).use(Cell).use(CellGroup).use(Tag).mount('#app');
+const app = createApp(App);
+[
+  ActionSheet,
+  Button,
+  Cell,
+  CellGroup,
+  DropdownItem,
+  DropdownMenu,
+  Empty,
+  Field,
+  Grid,
+  GridItem,
+  Icon,
+  Image,
+  NoticeBar,
+  Popup,
+  PullRefresh,
+  Skeleton,
+  Tabbar,
+  TabbarItem,
+  Tag,
+  Picker,
+  DatePicker,
+].forEach((comp) => app.use(comp));
+app.mount('#app');
